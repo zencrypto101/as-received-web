@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The As-Received Web — Edition 01 — 18 October 2026</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  :root { --ink:#111; --mute:#666; --line:#d8d8d8; --accent:#111; }
+  * { box-sizing: border-box; }
+  body { margin:0; color:var(--ink); font:11pt/1.55 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  h1 { font-size:30pt; line-height:1.05; margin:0 0 10pt; letter-spacing:-0.5pt; }
+  h2 { font-size:15pt; margin:26pt 0 8pt; padding-top:10pt; border-top:1.5pt solid var(--ink); }
+  h3 { font-size:11.5pt; margin:16pt 0 5pt; }
+  p { margin:0 0 8pt; }
+  .cover { min-height:240mm; display:flex; flex-direction:column; justify-content:space-between; page-break-after:always; }
+  .kicker { font-size:9pt; letter-spacing:2.2pt; text-transform:uppercase; color:var(--mute); margin-bottom:14pt; }
+  .kicker b { color:var(--ink); }
+  .lede { font-size:13pt; line-height:1.45; max-width:120mm; }
+  .meta { font-size:9pt; color:var(--mute); border-top:.75pt solid var(--line); padding-top:8pt; }
+  .numbers { display:grid; grid-template-columns:1fr 1fr; gap:0 14mm; margin:6pt 0 12pt; }
+  .num { border-top:.75pt solid var(--line); padding:7pt 0 6pt; }
+  .num .v { font-size:20pt; font-weight:700; letter-spacing:-.4pt; display:block; }
+  .num .l { font-size:8.5pt; color:var(--mute); display:block; margin-top:1pt; }
+  .limits { background:#f4f4f2; border-left:2.5pt solid var(--ink); padding:10pt 12pt; margin:10pt 0 14pt; }
+  .limits h3 { margin:0 0 5pt; }
+  .limits li { margin:0 0 2pt; }
+  table { width:100%; border-collapse:collapse; font-size:8.6pt; margin:6pt 0 10pt; }
+  th { text-align:left; font-weight:600; border-bottom:1pt solid var(--ink); padding:4pt 4pt; }
+  td { border-bottom:.5pt solid var(--line); padding:3.4pt 4pt; }
+  td.pass { color:#1a6b2f; font-weight:600; }
+  td.gap { color:#8a4a00; font-weight:600; }
+  td.trap { color:#a11616; font-weight:700; }
+  td.na, td.info { color:var(--mute); }
+  .small { font-size:8.6pt; color:var(--mute); }
+  ul { margin:0 0 8pt; padding-left:14pt; }
+  li { margin:0 0 3pt; }
+  .claim { border:1pt solid var(--ink); padding:10pt 12pt; margin:10pt 0; font-size:10.5pt; }
+  .quote { font-size:13pt; line-height:1.4; margin:8pt 0 10pt; }
+  .pagebreak { page-break-before:always; }
+  code { font:9pt/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; background:#f2f2f0; padding:1pt 3pt; }
+  pre { font:8.4pt/1.42 ui-monospace, SFMono-Regular, Menlo, monospace; background:#f2f2f0; padding:8pt 10pt; overflow-wrap:anywhere; white-space:pre-wrap; }
+  footer { margin-top:14pt; border-top:.75pt solid var(--line); padding-top:6pt; font-size:8pt; color:var(--mute); }
+</style></head><body>
+
+<section class="cover">
+  <div>
+    <div class="kicker">AFTER HUMAN · <b>The As-Received Web</b> · Edition 01</div>
+    <h1>Ask two of nineteen sites for the markdown version and you get 200 OK and 471–718KB of HTML.</h1>
+    <p class="lede">A dated snapshot of what 19 live sites actually handed to an agent on 18 October 2026. Measured, method published, raw data included. No scores. No rankings.</p>
+  </div>
+  <div class="meta">
+    <p><b>What this is.</b> On 18 October 2026 we requested the same pages three ways and recorded what came back. This edition reports those responses. It is a record of the response layer, not of what any agent did with it.</p>
+    <p><b>What this is not.</b> Not an AI visibility index, not a score, not a ranking, not a claim about agent behaviour or purchases. §8 lists every claim this report refuses to make.</p>
+    <p>Published by @afterhuman_ai · Dataset release 2026-10-18 · SHA-256 sealed · Corrections: reply to the address this edition was sent from.</p>
+  </div>
+</section>
+
+<h2>1. The numbers, with their limits attached</h2>
+
+<div class="numbers">
+  <div class="num"><span class="v">9/19</span><span class="l">served a valid llms.txt (200 + markdown title)</span></div>
+  <div class="num"><span class="v">6/19</span><span class="l">answered <code>Accept: text/markdown</code> with markdown</span></div>
+  <div class="num"><span class="v">2/19</span><span class="l">returned 200 and an HTML page where markdown was requested</span></div>
+  <div class="num"><span class="v">2/6</span><span class="l">declare <code>Vary</code> inconsistently between HTML and markdown</span></div>
+  <div class="num"><span class="v">4/19</span><span class="l">robots.txt names at least one AI crawler to block</span></div>
+  <div class="num"><span class="v">87×</span><span class="l">median HTML-to-markdown payload ratio (max 690×)</span></div>
+</div>
+
+<div class="limits">
+  <h3>Read these five lines before the numbers</h3>
+  <ul>
+    <li><b>Entry URLs only.</b> We measured homepages. Product detail pages are a different population and are not characterised here.</li>
+    <li><b>No JavaScript.</b> We did not render pages. In a browser, forms and content may be visible that an HTTP fetch never receives.</li>
+    <li><b>One run, one date.</b> k=1. There is no time series in this edition.</li>
+    <li><b>Convenience sample.</b> 20 hosts, chosen by category, not randomly drawn. Percentages describe this sample, not the web.</li>
+    <li><b>No score, no ranking.</b> Per-check results and ratios only.</li>
+  </ul>
+</div>
+
+<p class="small">Measured 19 of 20 hosts. One host (dentsu.com) was excluded: its robots.txt disallows our user agent, so we did not request it. Two hosts were partially collected and are marked in §9.</p>
+
+<h2>2. Method</h2>
+
+<p>We sent ordinary HTTP requests with a single, honest user agent. No browser, no JavaScript, no headless renderer, no fabricated crawler identity.</p>
+
+<pre>User-Agent: AsReceivedAudit/1.0 (site-owner-requested verification; +https://as-received.invalid/bot)</pre>
+
+<ul>
+  <li><b>Requests per host:</b> the entry URL; the same URL with <code>Accept: text/markdown</code>; the <code>.md</code> variants of that URL; <code>/llms.txt</code>; and <code>/robots.txt</code>.</li>
+  <li><b>robots.txt is respected.</b> Where our agent is disallowed, we do not request the path and record the host as excluded. One host was excluded on this basis.</li>
+  <li><b>Timeouts:</b> 15 s per request at the socket level. Parallelism across hosts: 5. Wall clock for this release: 996.8 s.</li>
+  <li><b>Measurement window:</b> 18 October 2026, Singapore time.</li>
+  <li><b>No API, no third-party packages, no server.</b> Standard library only, so anyone can rerun it.</li>
+</ul>
+
+<p>Six signals are recorded, each a deterministic fact about the response:</p>
+<ul>
+  <li><code>llms.txt</code> — 200 and a markdown heading, or not.</li>
+  <li><b>Markdown negotiation</b> — does <code>Accept: text/markdown</code> return <code>text/markdown</code>?</li>
+  <li><code>.md</code> suffix — does <code>page.md</code> return markdown? If it returns 200 with HTML, that is recorded as a <b>trap</b>.</li>
+  <li><b>Vary</b> — do both the HTML and markdown responses declare <code>Accept</code>? A mismatch lets an intermediate cache serve the wrong representation.</li>
+  <li><b>Payload ratio</b> — HTML bytes divided by markdown bytes, for hosts that serve both.</li>
+  <li><b>robots.txt</b> — the declared policy toward 13 named AI crawlers. Declarations only; we do not test response differences by impersonating them.</li>
+</ul>
+
+<p><b>Rerun command.</b> The same script and the same host list reproduce this edition:</p>
+<pre>python3 output/audit/as_received_audit.py --index output/audit/sites_2026-10-18.txt --out-dir reports/index</pre>
+
+<h2>3. Site by site — the response layer</h2>
+
+<p class="small">Classes: PASS = the check was satisfied; GAP = the check was not satisfied; TRAP = 200 with the wrong content type; N-A = not applicable (e.g. no markdown served, so cache consistency cannot be assessed); INFO = recorded, not judged. Sites are listed in sample order, not ranked.</p>
+
+<table class="data"><thead><tr><th>Site</th><th>Category</th><th>llms.txt</th><th>Markdown</th><th>.md</th><th>Vary</th><th>robots</th><th>Payload</th><th>robots blocked</th></tr></thead><tbody><tr><td>www.lovebonito.com</td><td>commerce-sg</td><td>PASS</td><td>GAP</td><td>TRAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr><tr><td>www.charleskeith.com</td><td>commerce-sg</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td>1</td></tr><tr><td>www.decathlon.sg</td><td>commerce-sg</td><td>GAP</td><td>PASS</td><td>GAP</td><td>PASS</td><td>INFO</td><td>689.8</td><td></td></tr><tr><td>www.allbirds.com</td><td>commerce-global</td><td>PASS</td><td>GAP</td><td>TRAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr><tr><td>www.gymshark.com</td><td>commerce-global</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr><tr><td>www.warbyparker.com</td><td>commerce-global</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr><tr><td>www.shopify.com</td><td>commerce-global</td><td>PASS</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr><tr><td>www.amazon.com</td><td>commerce-global</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td>11</td></tr><tr><td>www.ogilvy.com</td><td>agency</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr><tr><td>www.wpp.com</td><td>agency</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td>2</td></tr><tr><td>www.dentsu.com</td><td>agency</td><td>excluded</td><td></td><td></td><td></td><td></td><td></td><td>robots</td></tr><tr><td>www.publicisgroupe.com</td><td>agency</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr><tr><td>docs.stripe.com</td><td>docs</td><td>PASS</td><td>PASS</td><td>PASS</td><td>PASS</td><td>INFO</td><td>87.4</td><td></td></tr><tr><td>vercel.com</td><td>docs</td><td>PASS</td><td>PASS</td><td>PASS</td><td>ASYM</td><td>INFO</td><td></td><td></td></tr><tr><td>developers.cloudflare.com</td><td>docs</td><td>PASS</td><td>PASS</td><td>GAP</td><td>PASS</td><td>INFO</td><td>30.0</td><td></td></tr><tr><td>docs.anthropic.com</td><td>docs</td><td>PASS</td><td>PASS</td><td>PASS</td><td>ASYM</td><td>INFO</td><td>64.8</td><td></td></tr><tr><td>www.cloudflare.com</td><td>saas</td><td>PASS</td><td>PASS</td><td>PASS</td><td>PASS</td><td>INFO</td><td>447.0</td><td></td></tr><tr><td>stripe.com</td><td>saas</td><td>PASS</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr><tr><td>www.nytimes.com</td><td>media</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td>12</td></tr><tr><td>www.donga.com</td><td>media</td><td>GAP</td><td>GAP</td><td>GAP</td><td>N-A</td><td>INFO</td><td></td><td></td></tr></tbody></table>
+
+<h2>4. Four failure patterns</h2>
+
+<h3>(a) The 200 that lies</h3>
+<p>2 hosts answered a request for a markdown file with <code>200 OK</code> and an HTML page: 471,353B and 718,290B. A fetcher that checks only the status code puts a quarter-megabyte of markup into a context window and calls it content.</p>
+
+<h3>(b) Commerce does not negotiate</h3>
+<p>Of the 8 commerce hosts, 1 answered the markdown request with markdown (www.decathlon.sg, 689.8×). The rest returned HTML. The documentation hosts all answered with markdown — the capability exists, it is simply concentrated where the platforms themselves maintain it.</p>
+
+<h3>(c) A cache can hand out the wrong version</h3>
+<p>2 of the 6 markdown-serving hosts declare <code>Vary</code> differently between their HTML and markdown responses. When a cache keys on the wrong header, a browser can receive the markdown version and an agent the HTML one — for the same URL.</p>
+
+<h3>(d) Declared blocking</h3>
+<p>4 hosts name at least one AI crawler in robots.txt as disallowed. This is a declaration, not an observed response; we do not test response differences by impersonating crawlers.</p>
+
+<h2>5. What the same page costs</h2>
+
+<p>For the six hosts that served markdown, the table below is the matched pair: the same URL, two representations, their byte counts, and the ratio.</p>
+
+<table class="data"><thead><tr><th>Site</th><th>HTML</th><th>Markdown</th><th>Ratio</th></tr></thead><tbody><tr><td>www.decathlon.sg</td><td>787,093B</td><td>1,141B</td><td>689.8×</td></tr><tr><td>www.cloudflare.com</td><td>1,334,684B</td><td>2,986B</td><td>447.0×</td></tr><tr><td>docs.stripe.com</td><td>450,859B</td><td>5,157B</td><td>87.4×</td></tr><tr><td>docs.anthropic.com</td><td>378,541B</td><td>5,841B</td><td>64.8×</td></tr><tr><td>developers.cloudflare.com</td><td>211,241B</td><td>7,031B</td><td>30.0×</td></tr></tbody></table>
+
+<p>Median ratio: <b>87×</b>. Maximum: <b>690×</b>. Token figures sometimes quoted alongside byte counts are estimates from bytes, not measurements, and are omitted from this edition for that reason.</p>
+
+<h2 class="pagebreak">6. The action layer — what an HTTP fetch can act on</h2>
+
+<p>Reading is the first problem. The second is whether the response contains anything an HTTP-only agent can act on: a form, a task link, a declared endpoint.</p>
+
+<div class="numbers">
+  <div class="num"><span class="v">11/19</span><span class="l">served HTML with no <code>&lt;form&gt;</code> element at all</span></div>
+  <div class="num"><span class="v">5/19</span><span class="l">had no cart, checkout, booking, apply or contact link in the HTML</span></div>
+  <div class="num"><span class="v">15/19</span><span class="l">published no <code>/.well-known/</code> agent endpoint we could find</span></div>
+</div>
+
+<p class="small">These counts are properties of the entry URL's server response. Whether an agent, running JavaScript, would find a form is not measured here. Zero form elements means zero form elements in the HTML we received.</p>
+
+<table class="data"><thead><tr><th>Site</th><th>Category</th><th>form</th><th>form count</th><th>task links</th><th>link count</th><th>agent endpoints</th><th>endpoint count</th></tr></thead><tbody><tr><td>www.lovebonito.com</td><td>commerce-sg</td><td>GAP</td><td>0</td><td>PASS</td><td>2</td><td>GAP</td><td>0</td></tr><tr><td>www.charleskeith.com</td><td>commerce-sg</td><td>PASS</td><td>2</td><td>PASS</td><td>4</td><td>GAP</td><td>0</td></tr><tr><td>www.decathlon.sg</td><td>commerce-sg</td><td>GAP</td><td>0</td><td>GAP</td><td>0</td><td>GAP</td><td>0</td></tr><tr><td>www.allbirds.com</td><td>commerce-global</td><td>PASS</td><td>1</td><td>PASS</td><td>3</td><td>PASS</td><td>1</td></tr><tr><td>www.gymshark.com</td><td>commerce-global</td><td>GAP</td><td>0</td><td>PASS</td><td>1</td><td>GAP</td><td>0</td></tr><tr><td>www.warbyparker.com</td><td>commerce-global</td><td>GAP</td><td>0</td><td>GAP</td><td>0</td><td>PASS</td><td>1</td></tr><tr><td>www.shopify.com</td><td>commerce-global</td><td>GAP</td><td>0</td><td>PASS</td><td>3</td><td>GAP</td><td>0</td></tr><tr><td>www.amazon.com</td><td>commerce-global</td><td>PASS</td><td>1</td><td>PASS</td><td>6</td><td>GAP</td><td>0</td></tr><tr><td>www.ogilvy.com</td><td>agency</td><td>PASS</td><td>3</td><td>PASS</td><td>3</td><td>GAP</td><td>0</td></tr><tr><td>www.wpp.com</td><td>agency</td><td>GAP</td><td>0</td><td>PASS</td><td>2</td><td>GAP</td><td>0</td></tr><tr><td>www.dentsu.com</td><td>agency</td><td>excluded</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>www.publicisgroupe.com</td><td>agency</td><td>PASS</td><td>2</td><td>GAP</td><td>0</td><td>GAP</td><td>0</td></tr><tr><td>docs.stripe.com</td><td>docs</td><td>GAP</td><td>0</td><td>PASS</td><td>3</td><td>GAP</td><td>0</td></tr><tr><td>vercel.com</td><td>docs</td><td>PASS</td><td>1</td><td>PASS</td><td>1</td><td>GAP</td><td>0</td></tr><tr><td>developers.cloudflare.com</td><td>docs</td><td>GAP</td><td>0</td><td>PASS</td><td>2</td><td>GAP</td><td>0</td></tr><tr><td>docs.anthropic.com</td><td>docs</td><td>GAP</td><td>0</td><td>GAP</td><td>0</td><td>PASS</td><td>5</td></tr><tr><td>www.cloudflare.com</td><td>saas</td><td>PASS</td><td>1</td><td>PASS</td><td>1</td><td>PASS</td><td>1</td></tr><tr><td>stripe.com</td><td>saas</td><td>GAP</td><td>0</td><td>PASS</td><td>4</td><td>GAP</td><td>0</td></tr><tr><td>www.nytimes.com</td><td>media</td><td>GAP</td><td>0</td><td>GAP</td><td>0</td><td>GAP</td><td>0</td></tr><tr><td>www.donga.com</td><td>media</td><td>PASS</td><td>1</td><td>PASS</td><td>1</td><td>GAP</td><td>0</td></tr></tbody></table>
+
+<h2>7. One claim we withdrew</h2>
+
+<p>A draft of this edition said that no site published product or price structured data. On the entry URLs that was literally true — every JSON-LD block we saw was an organisation block. It was also wrong as a statement about the sites, and we are recording the withdrawal rather than deleting it.</p>
+
+<p>Checking product detail pages on Shopify stores found <code>Product</code>, <code>Offer</code> and <code>price</code> present (allbirds $110, gymshark $15). The 19/19 figure was an artefact of measuring homepages. It appears nowhere in this edition except here, and it will not be reinstated.</p>
+
+<h2>8. What this report does not claim</h2>
+
+<ul>
+  <li><b>Agent behaviour.</b> We did not measure what any agent did, read, skipped or bought. Logs would be required and we do not have them.</li>
+  <li><b>Task completion, checkout success, drop-off points.</b> Not measured, not estimated, not implied.</li>
+  <li><b>Scores, grades, ranks.</b> None published. A single figure for a site would require a weighting we cannot defend.</li>
+  <li><b>Cross-platform AI visibility.</b> Not measured. That is a different question, answered by other products.</li>
+  <li><b>Response differences by crawler identity.</b> We do not impersonate crawlers. robots.txt declarations only.</li>
+  <li><b>Loss estimates.</b> We did not model revenue or traffic impact.</li>
+  <li><b>Product detail pages.</b> Not characterised. Homepages only.</li>
+</ul>
+
+<h2>9. Appendix</h2>
+
+<h3>Excluded and partially collected</h3>
+<ul>
+  <li><b>dentsu.com</b> — excluded by policy: robots.txt disallows our user agent.</li>
+  <li><b>publicisgroupe.com</b> — partial: TLS handshake timed out; response-layer checks are incomplete.</li>
+  <li><b>vercel.com/docs</b> — partial: read timeout on one request; recorded as collected with missing fields rather than imputed.</li>
+</ul>
+
+<h3>Seals</h3>
+<p>Every file in this release is hashed. Verify with <code>shasum -a 256 -c sha256.txt</code>.</p>
+<pre>3f72b03cb46720ab33299a9e9d11061fa4d32fd2cb60c1534c3b8ac2a99e5c76  MANIFEST.md
+bfa2b54f4cd2001cdc82a12431c1dc13a3db182a9bb5e3db0850f141ffc0c67e  action_layer_2026-10-18.csv
+d92ea9d9941f91dbaad0f37421203db7b7a86b63e3cc44fc2f81940d64bb4de2  dataset_2026-10-18.json
+62138bf571238819b103ca49b48c3b81da858dd2378c760dff32a2b4ea7cace2  raw/action_run_20261018_123516.json
+18ca7d4fbc79f54ad6525be5011846b241a995cc7d02ff8e78df921ee4e1a42a  raw/as_received_action_ledger.jsonl
+bf730210aa362460e63670f597e7a6cf60e9374cd5d5a677b87b1905d442be52  raw/as_received_ledger.jsonl</pre>
+
+<h3>Run identifiers</h3>
+<ul>
+  <li>Response-layer run: <code>run_20261018_120735.json</code></li>
+  <li>Action-layer run: <code>action_run_20261018_123516.json</code></li>
+  <li>Frozen at: <code>2026-10-18T12:37:02+0800</code></li>
+  <li>Schema: 1 · k=1 · convenience sample · 19 of 20 hosts measured</li>
+</ul>
+
+<h3>Corrections</h3>
+<p>Reply to the address this edition was sent from. Factual errors are corrected in the next edition with the correction printed, not quietly edited. The published file stays as published; corrections are published alongside it.</p>
+
+<footer>THE AS-RECEIVED WEB · Edition 01 · 18 October 2026 · @afterhuman_ai · No scores. No rankings. Raw data included.</footer>
+</body></html>

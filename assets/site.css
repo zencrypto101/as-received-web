@@ -1,0 +1,38 @@
+/* The As-Received Web — static site, no build */
+@page { size: A4; margin: 18mm 16mm; }
+:root { --ink:#111; --mute:#666; --line:#dcdcd8; --bg:#fbfbf9; --hi:#f2f2ee; }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.6 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif; }
+.wrap { max-width:760px; margin:0 auto; padding:56px 22px 90px; }
+.kicker { font-size:11px; letter-spacing:2.4px; text-transform:uppercase; color:var(--mute); }
+h1 { font-size:clamp(30px,6vw,52px); line-height:1.06; letter-spacing:-1px; margin:14px 0 18px; font-weight:700; }
+h2 { font-size:22px; letter-spacing:-.3px; margin:44px 0 12px; padding-top:14px; border-top:1.5px solid var(--ink); }
+h3 { font-size:16px; margin:26px 0 6px; }
+p { margin:0 0 12px; }
+.lede { font-size:clamp(17px,2.4vw,20px); line-height:1.5; color:#222; max-width:620px; }
+.meta { font-size:13px; color:var(--mute); }
+a { color:var(--ink); text-underline-offset:2px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0 26px; margin:22px 0 8px; }
+.cell { border-top:1px solid var(--line); padding:12px 0 10px; }
+.cell .v { font-size:26px; font-weight:700; letter-spacing:-.6px; display:block; }
+.cell .l { font-size:13px; color:var(--mute); display:block; margin-top:3px; }
+.box { background:var(--hi); border-left:3px solid var(--ink); padding:16px 18px; margin:18px 0 4px; }
+.box h3 { margin:0 0 8px; }
+ul { margin:0 0 14px; padding-left:18px; }
+li { margin:0 0 5px; }
+table { width:100%; border-collapse:collapse; font-size:13px; margin:12px 0 6px; }
+th { text-align:left; font-weight:600; border-bottom:1.5px solid var(--ink); padding:7px 6px; }
+td { border-bottom:1px solid var(--line); padding:6px; }
+.btn { display:inline-block; background:var(--ink); color:#fff; text-decoration:none;
+  padding:13px 20px; font-weight:600; font-size:15px; margin:6px 8px 4px 0; }
+.btn.off { background:#dcdcd8; color:#555; }
+.note { font-size:12.5px; color:var(--mute); margin:2px 0 16px; }
+pre { font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; background:var(--hi);
+  padding:12px 14px; overflow-wrap:anywhere; white-space:pre-wrap; }
+code { font:13px ui-monospace,SFMono-Regular,Menlo,monospace; background:var(--hi); padding:1px 4px; }
+footer { margin-top:56px; border-top:1px solid var(--line); padding-top:14px; font-size:12.5px; color:var(--mute); }
+.small { font-size:13px; color:var(--mute); }
+.tag { font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--mute); }
+@media print { .btn,.no-print { display:none; } body { background:#fff; } }

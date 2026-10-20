@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The As-Received Web — Edition 01</title>
+<meta name="description" content="A dated snapshot of what 19 live sites actually handed to an agent on 18 October 2026. Measured, method published, raw data included. No scores. No rankings.">
+<link rel="stylesheet" href="assets/site.css"></head><body>
+<div class="wrap">
+  <p class="kicker">@afterhuman_ai · Edition 01 · 18 October 2026</p>
+  <h1>Ask two of nineteen sites for the markdown version and you get 200&nbsp;OK and 471–718KB of HTML.</h1>
+  <p class="lede">A dated snapshot of what 19 live sites actually handed to an agent on 18 October 2026. Measured, method published, raw data included. No scores. No rankings.</p>
+
+  <div class="grid">
+    <div class="cell"><span class="v">6/19</span><span class="l">answered a request for markdown with markdown</span></div>
+    <div class="cell"><span class="v">2/19</span><span class="l">returned 200 and an HTML page where markdown was requested</span></div>
+    <div class="cell"><span class="v">11/19</span><span class="l">served HTML with no form element at all</span></div>
+    <div class="cell"><span class="v">87×</span><span class="l">median HTML-to-markdown payload ratio (max 690×)</span></div>
+  </div>
+
+  <div class="box">
+    <h3>Read this before the numbers</h3>
+    <ul>
+      <li><b>Homepages only.</b> Product pages are a different population and are not characterised here.</li>
+      <li><b>No JavaScript.</b> We did not render pages. A browser may show what an HTTP fetch never receives.</li>
+      <li><b>One run, one date.</b> k=1. This edition contains no time series.</li>
+      <li><b>Convenience sample.</b> 19 of 20 hosts, chosen by category, not drawn at random.</li>
+      <li><b>No score, no ranking.</b> Per-check results and ratios only.</li>
+    </ul>
+  </div>
+
+  <h2>What the edition contains</h2>
+  <p><a href="edition-01.html"><b>Read Edition 01</b></a> — 19 of 20 hosts, six response checks, site-by-site tables, four failure patterns, the method, and every claim this report refuses to make.</p>
+  <p><a href="data.html">Browse the data</a> — the same tables as the report, plus CSV and JSON downloads and the SHA-256 seals.</p>
+
+  <h2>Get it</h2>
+  <a class="btn" href="https://x.com/afterhuman_ai">Get Edition 01 — reply on the channel</a><p class="note">No account, no form, no email list. Reply to the launch post or DM <a href="https://x.com/afterhuman_ai">@afterhuman_ai</a> and Edition 01 is sent to you.</p>
+  <a class="btn" href="https://x.com/afterhuman_ai">Ask about The Ledger — $99/year</a><p class="note">Monthly editions, raw data, full history, corrections first. No seats, no countdown. Ask on the channel; payment instructions come with the reply.</p>
+  <p class="small">The founding price is locked for anyone who starts before the next price increase. Payment instructions come with the reply; nothing is charged by this page.</p>
+
+  <h2>What this is not</h2>
+  <ul>
+    <li>Not an AI visibility index. That question is “does a brand appear in AI answers”, it is already well covered, and we do not measure it.</li>
+    <li>Not a score or a ranking. One number per site would need a weighting we cannot defend.</li>
+    <li>Not a claim about agent behaviour. We do not know what any agent read, skipped or bought.</li>
+  </ul>
+
+  <h2>How it was measured</h2>
+  <p>One honest user agent, ordinary HTTP requests, no browser and no JavaScript. Every host received the same three requests; <code>robots.txt</code> was respected and one host was excluded because of it. Six signals, each a deterministic fact about the response. Two independent runs produced zero class changes across 133 checks.</p>
+  <pre>python3 output/audit/as_received_audit.py --index output/audit/sites_2026-10-18.txt --out-dir reports/index</pre>
+
+  <h2>Corrections</h2>
+  <p>Factual errors are corrected in the next edition, with the correction printed. Published files stay as published; corrections are published alongside them. Nothing is edited quietly. <a href="corrections.html">How to send one</a>.</p>
+
+  <footer>
+    <p>THE AS-RECEIVED WEB · Edition 01 · 18 October 2026 · @afterhuman_ai</p>
+    <p>No scores. No rankings. Raw data included.</p>
+  </footer>
+</div></body></html>

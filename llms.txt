@@ -1,0 +1,8 @@
+# The As-Received Web
+
+> A dated measurement of what live websites return to an HTTP agent. Edition 01: 19 of 20 hosts, 18 October 2026. No scores, no rankings, raw data included.
+
+- [Edition 01](edition-01.html): the report. Homepages only, no JavaScript, k=1, convenience sample.
+- [Data](data.html): tables plus CSV, JSON, MANIFEST and SHA-256 seals.
+- [Corrections](corrections.html): how to report a factual error; corrections are printed in the next edition.
+- [Landing](index.html): what this is and what it refuses to claim.
