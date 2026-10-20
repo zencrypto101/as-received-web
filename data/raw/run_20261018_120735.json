@@ -1,0 +1,1175 @@
+{
+ "schema": 1,
+ "run_at": "2026-10-18T11:50:58+0800",
+ "ua": "AsReceivedAudit/1.0 (site-owner-requested verification; +https://as-received.invalid/bot)",
+ "sites": [
+  {
+   "site": "https://www.lovebonito.com/",
+   "host": "https://www.lovebonito.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "TRAP",
+     "value": "html",
+     "evidence": "https://www.lovebonito.com/.md -> 200 html 470992B (상태코드만 보는 수집기는 HTML을 마크다운으로 오인)"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 10,
+     "evidence": "/llms.txt -> 200 text 2148B, 제목OK, 링크 10개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "True/True",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=Accept) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 471353B != MD 470992B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.9%",
+     "evidence": "가시텍스트 4335자 / HTML 471353B = 0.9%, script 111개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.lovebonito.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 471353,
+    "visible_chars": 4335,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=HIT / cc=public, max-age=86400, stale-while-revalidate=86400"
+   },
+   "elapsed_s": 1.23
+  },
+  {
+   "site": "https://www.charleskeith.com/",
+   "host": "https://www.charleskeith.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.charleskeith.com/.md -> 404 html; www.charleskeith.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 404,
+     "evidence": "/llms.txt -> 404 html 82062B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "True/True",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=Accept) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 570545B != MD 570186B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "1.0%",
+     "evidence": "가시텍스트 5469자 / HTML 570545B = 1.0%, script 55개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 1/13",
+     "evidence": "robots.txt 200 · BLOCK=['Bytespider'] · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.charleskeith.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 570545,
+    "visible_chars": 5469,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 1,
+    "ver": "cloudflare / cf-cache=DYNAMIC / cc=no-cache, no-store, must-revalidate"
+   },
+   "elapsed_s": 4.94
+  },
+  {
+   "site": "https://www.decathlon.sg/",
+   "host": "https://www.decathlon.sg",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "Accept: text/markdown -> 200 md 1141B (HTML 가시텍스트 대비 1141.0x)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.decathlon.sg/.md -> 404 html; www.decathlon.sg/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 404,
+     "evidence": "/llms.txt -> 404 html 36798B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "PASS",
+     "value": "True/True",
+     "evidence": "HTML·MD 양쪽 Vary에 Accept 선언"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": ">100x",
+     "evidence": "HTML 787093B != MD 1141B (690x 절감 가능, ≈196k tok vs 0k tok)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.0%",
+     "evidence": "가시텍스트 0자 / HTML 787093B = 0.0%, script 21개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.decathlon.sg/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 787093,
+    "visible_chars": 0,
+    "md_bytes": 1141,
+    "payload_ratio": 689.8,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=HIT / cc=public, max-age=1200, stale-while-revalidate=3600"
+   },
+   "elapsed_s": 0.62
+  },
+  {
+   "site": "https://www.allbirds.com/",
+   "host": "https://www.allbirds.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "TRAP",
+     "value": "html",
+     "evidence": "https://www.allbirds.com/.md -> 200 html 718345B (상태코드만 보는 수집기는 HTML을 마크다운으로 오인)"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 8,
+     "evidence": "/llms.txt -> 200 md 5793B, 제목OK, 링크 8개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "True/True",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=Accept) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 718290B != MD 718290B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "13.7%",
+     "evidence": "가시텍스트 98509자 / HTML 718290B = 13.7%, script 71개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.allbirds.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 718290,
+    "visible_chars": 98509,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=DYNAMIC / cc=private, max-age=0, must-revalidate"
+   },
+   "elapsed_s": 2.18
+  },
+  {
+   "site": "https://www.gymshark.com/",
+   "host": "https://www.gymshark.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "Accept: text/markdown -> None - (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.gymshark.com/.md -> 404 html; www.gymshark.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 404,
+     "evidence": "/llms.txt -> 404 html 4276B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "False/False",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=없음) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 1828579B != MD 0B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.8%",
+     "evidence": "가시텍스트 15294자 / HTML 1828579B = 0.8%, script 17개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.gymshark.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 1828579,
+    "visible_chars": 15294,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "CloudFront / cf-cache=- / cc=public, s-maxage=60, stale-while-revalidate=1000"
+   },
+   "elapsed_s": 967.48
+  },
+  {
+   "site": "https://www.warbyparker.com/",
+   "host": "https://www.warbyparker.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 403 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.warbyparker.com/.md -> 403 html; www.warbyparker.com/index.md -> 403 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 403,
+     "evidence": "/llms.txt -> 403 html 3670B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "True/True",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=Accept) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 4133B != MD 4128B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "61.7%",
+     "evidence": "가시텍스트 2548자 / HTML 4133B = 61.7%, script 0개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 403 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.warbyparker.com/",
+    "status": 403,
+    "err": null,
+    "content_type": "html",
+    "bytes": 4133,
+    "visible_chars": 2548,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=- / cc=private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+   },
+   "elapsed_s": 0.58
+  },
+  {
+   "site": "https://www.shopify.com/",
+   "host": "https://www.shopify.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.shopify.com/.md -> 404 html; www.shopify.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 74,
+     "evidence": "/llms.txt -> 200 text 12520B, 제목OK, 링크 74개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "True/True",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=Accept) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 668876B != MD 668876B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "1.0%",
+     "evidence": "가시텍스트 7006자 / HTML 668876B = 1.0%, script 8개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.shopify.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 668876,
+    "visible_chars": 7006,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=DYNAMIC / cc=max-age=900, stale-while-revalidate=86400"
+   },
+   "elapsed_s": 0.89
+  },
+  {
+   "site": "https://www.amazon.com/",
+   "host": "https://www.amazon.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.amazon.com/.md -> 404 html; www.amazon.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 404,
+     "evidence": "/llms.txt -> 404 html 1147B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "True/True",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=Accept) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 652713B != MD 672910B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.7%",
+     "evidence": "가시텍스트 4664자 / HTML 652713B = 0.7%, script 89개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 11/13",
+     "evidence": "robots.txt 200 · BLOCK=['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended', 'CCBot', 'Bytespider', 'meta-externalagent', 'cohere-ai'] · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.amazon.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 652713,
+    "visible_chars": 4664,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 11,
+    "ver": "Server / cf-cache=- / cc=no-cache"
+   },
+   "elapsed_s": 3.85
+  },
+  {
+   "site": "https://www.ogilvy.com/",
+   "host": "https://www.ogilvy.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.ogilvy.com/.md -> 403 html; www.ogilvy.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": null,
+     "evidence": "/llms.txt -> None - 0B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "True/True",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=Accept) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 396462B != MD 396462B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "3.6%",
+     "evidence": "가시텍스트 14252자 / HTML 396462B = 3.6%, script 13개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.ogilvy.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 396462,
+    "visible_chars": 14252,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=HIT / cc=public, max-age=31536000"
+   },
+   "elapsed_s": 979.41
+  },
+  {
+   "site": "https://www.wpp.com/",
+   "host": "https://www.wpp.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.wpp.com/.md -> 404 html; www.wpp.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 404,
+     "evidence": "/llms.txt -> 404 html 1928B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "False/False",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=없음) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 283851B != MD 283851B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.5%",
+     "evidence": "가시텍스트 1377자 / HTML 283851B = 0.5%, script 40개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 2/13",
+     "evidence": "robots.txt 200 · BLOCK=['GPTBot', 'CCBot'] · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.wpp.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 283851,
+    "visible_chars": 1377,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 2,
+    "ver": "Vercel / cf-cache=- / cc=public, max-age=0, must-revalidate"
+   },
+   "elapsed_s": 0.75
+  },
+  {
+   "site": "https://www.dentsu.com/",
+   "host": "https://www.dentsu.com",
+   "excluded": "robots",
+   "checks": [],
+   "raw": {},
+   "elapsed_s": 0.0
+  },
+  {
+   "site": "https://www.publicisgroupe.com/",
+   "host": "https://www.publicisgroupe.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.publicisgroupe.com/.md -> 403 html; www.publicisgroupe.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 404,
+     "evidence": "/llms.txt -> 404 html 196B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "False/False",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=없음) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 0B != MD 20807B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.0%",
+     "evidence": "가시텍스트 0자 / HTML 0B = 0.0%, script 0개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.publicisgroupe.com/",
+    "status": null,
+    "err": "URLError: <urlopen error _ssl.c:1064: The handshake operation timed out>",
+    "content_type": "-",
+    "bytes": 0,
+    "visible_chars": 0,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "- / cf-cache=- / cc=-"
+   },
+   "elapsed_s": 983.37
+  },
+  {
+   "site": "https://docs.stripe.com/payments",
+   "host": "https://docs.stripe.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "Accept: text/markdown -> 200 md 5157B (HTML 가시텍스트 대비 1.67x)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "https://docs.stripe.com/payments.md -> 200 md 0B"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 527,
+     "evidence": "/llms.txt -> 200 md 97564B, 제목OK, 링크 527개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "PASS",
+     "value": "True/True",
+     "evidence": "HTML·MD 양쪽 Vary에 Accept 선언"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "50-100x",
+     "evidence": "HTML 450859B != MD 5157B (87x 절감 가능, ≈112k tok vs 1k tok)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.7%",
+     "evidence": "가시텍스트 3091자 / HTML 450859B = 0.7%, script 7개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://docs.stripe.com/payments",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 450859,
+    "visible_chars": 3091,
+    "md_bytes": 5157,
+    "payload_ratio": 87.4,
+    "robots_blocked": 0,
+    "ver": "nginx / cf-cache=- / cc=-"
+   },
+   "elapsed_s": 959.19
+  },
+  {
+   "site": "https://vercel.com/docs",
+   "host": "https://vercel.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "Accept: text/markdown -> 200 md 9104B (HTML 가시텍스트 대비 9104.0x)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "https://vercel.com/docs.md -> 200 md 9104B"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 27,
+     "evidence": "/llms.txt -> 200 text 5240B, 제목OK, 링크 27개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "ASYM",
+     "value": "False/True",
+     "evidence": "Vary 불일치 — HTML=없음 / MD=Accept (중간 캐시가 반대 표현 서빙 가능)"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 0B != MD 9104B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.0%",
+     "evidence": "가시텍스트 0자 / HTML 0B = 0.0%, script 0개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://vercel.com/docs",
+    "status": null,
+    "err": "TimeoutError: The read operation timed out",
+    "content_type": "-",
+    "bytes": 0,
+    "visible_chars": 0,
+    "md_bytes": 9104,
+    "payload_ratio": 0.0,
+    "robots_blocked": 0,
+    "ver": "- / cf-cache=- / cc=-"
+   },
+   "elapsed_s": 977.23
+  },
+  {
+   "site": "https://developers.cloudflare.com/workers/",
+   "host": "https://developers.cloudflare.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "Accept: text/markdown -> 200 md 7031B (HTML 가시텍스트 대비 0.66x)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "developers.cloudflare.com/workers.md -> 404 md"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 112,
+     "evidence": "/llms.txt -> 200 text 16787B, 제목OK, 링크 112개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "PASS",
+     "value": "True/True",
+     "evidence": "HTML·MD 양쪽 Vary에 Accept 선언"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "10-50x",
+     "evidence": "HTML 211241B != MD 7031B (30x 절감 가능, ≈52k tok vs 1k tok)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "5.0%",
+     "evidence": "가시텍스트 10651자 / HTML 211241B = 5.0%, script 21개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://developers.cloudflare.com/workers/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 211241,
+    "visible_chars": 10651,
+    "md_bytes": 7031,
+    "payload_ratio": 30.0,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=HIT / cc=public, max-age=0, must-revalidate"
+   },
+   "elapsed_s": 1.79
+  },
+  {
+   "site": "https://docs.anthropic.com/en/docs/overview",
+   "host": "https://docs.anthropic.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "Accept: text/markdown -> 200 md 5841B (HTML 가시텍스트 대비 0.97x)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "https://docs.anthropic.com/en/docs/overview.md -> 200 md 5841B"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 784,
+     "evidence": "/llms.txt -> 200 text 86059B, 제목OK, 링크 784개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "ASYM",
+     "value": "False/True",
+     "evidence": "Vary 불일치 — HTML=없음 / MD=Accept (중간 캐시가 반대 표현 서빙 가능)"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "50-100x",
+     "evidence": "HTML 378541B != MD 5841B (65x 절감 가능, ≈94k tok vs 1k tok)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "1.6%",
+     "evidence": "가시텍스트 6010자 / HTML 378541B = 1.6%, script 96개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://docs.anthropic.com/en/docs/overview",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 378541,
+    "visible_chars": 6010,
+    "md_bytes": 5841,
+    "payload_ratio": 64.8,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=BYPASS / cc=private, no-cache, no-store, max-age=0, must-revalidate"
+   },
+   "elapsed_s": 5.11
+  },
+  {
+   "site": "https://www.cloudflare.com/",
+   "host": "https://www.cloudflare.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "Accept: text/markdown -> 200 md 2986B (HTML 가시텍스트 대비 0.43x)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "PASS",
+     "value": "md",
+     "evidence": "https://www.cloudflare.com/.md -> 200 md 2986B"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 90,
+     "evidence": "/llms.txt -> 200 text 17173B, 제목OK, 링크 90개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "PASS",
+     "value": "True/True",
+     "evidence": "HTML·MD 양쪽 Vary에 Accept 선언"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": ">100x",
+     "evidence": "HTML 1334684B != MD 2986B (447x 절감 가능, ≈333k tok vs 0k tok)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "0.5%",
+     "evidence": "가시텍스트 6958자 / HTML 1334684B = 0.5%, script 29개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.cloudflare.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 1334684,
+    "visible_chars": 6958,
+    "md_bytes": 2986,
+    "payload_ratio": 447.0,
+    "robots_blocked": 0,
+    "ver": "cloudflare / cf-cache=HIT / cc=max-age=10"
+   },
+   "elapsed_s": 0.85
+  },
+  {
+   "site": "https://stripe.com/",
+   "host": "https://stripe.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "stripe.com/.md -> 404 html; stripe.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "PASS",
+     "value": 308,
+     "evidence": "/llms.txt -> 200 text 69923B, 제목OK, 링크 308개"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "False/False",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=없음) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 754908B != MD 754908B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "1.7%",
+     "evidence": "가시텍스트 12859자 / HTML 754908B = 1.7%, script 86개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://stripe.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 754908,
+    "visible_chars": 12859,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "nginx / cf-cache=- / cc=-"
+   },
+   "elapsed_s": 1.96
+  },
+  {
+   "site": "https://www.nytimes.com/",
+   "host": "https://www.nytimes.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 403 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.nytimes.com/.md -> 404 html; www.nytimes.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 404,
+     "evidence": "/llms.txt -> 404 html 25546B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "False/False",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=없음) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 771B != MD 771B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "5.6%",
+     "evidence": "가시텍스트 43자 / HTML 771B = 5.6%, script 2개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 12/13",
+     "evidence": "robots.txt 200 · BLOCK=['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'PerplexityBot', 'Google-Extended', 'CCBot', 'Bytespider', 'Applebot-Extended', 'meta-externalagent', 'cohere-ai'] · PARTIAL=['Amazonbot']"
+    }
+   ],
+   "raw": {
+    "url": "https://www.nytimes.com/",
+    "status": 403,
+    "err": null,
+    "content_type": "html",
+    "bytes": 771,
+    "visible_chars": 43,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 12,
+    "ver": "DataDome / cf-cache=- / cc=max-age=0, private, no-cache, no-store, must-revalidate"
+   },
+   "elapsed_s": 3.03
+  },
+  {
+   "site": "https://www.donga.com/",
+   "host": "https://www.donga.com",
+   "checks": [
+    {
+     "id": "md_negotiation",
+     "class": "GAP",
+     "value": "html",
+     "evidence": "Accept: text/markdown -> 200 html (마크다운 미제공)"
+    },
+    {
+     "id": "md_suffix",
+     "class": "GAP",
+     "value": "-",
+     "evidence": "www.donga.com/.md -> 404 html; www.donga.com/index.md -> 404 html"
+    },
+    {
+     "id": "llms_txt",
+     "class": "GAP",
+     "value": 404,
+     "evidence": "/llms.txt -> 404 html 11533B"
+    },
+    {
+     "id": "vary_accept",
+     "class": "N-A",
+     "value": "True/True",
+     "evidence": "마크다운 분기 자체가 없음(HTML Vary=Accept) → 캐시 키 검사 무의미. 마크다운 도입 시 필수"
+    },
+    {
+     "id": "payload_cost",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "HTML 244640B != MD 244265B (MD 없음 → 절감 수단 0)"
+    },
+    {
+     "id": "server_html_text",
+     "class": "INFO",
+     "value": "2.7%",
+     "evidence": "가시텍스트 6535자 / HTML 244640B = 2.7%, script 40개, 빈 셸=False"
+    },
+    {
+     "id": "robots_ai_policy",
+     "class": "INFO",
+     "value": "blocked 0/13",
+     "evidence": "robots.txt 200 · BLOCK=- · PARTIAL=-"
+    }
+   ],
+   "raw": {
+    "url": "https://www.donga.com/",
+    "status": 200,
+    "err": null,
+    "content_type": "html",
+    "bytes": 244640,
+    "visible_chars": 6535,
+    "md_bytes": null,
+    "payload_ratio": null,
+    "robots_blocked": 0,
+    "ver": "Apache / cf-cache=- / cc=-"
+   },
+   "elapsed_s": 22.83
+  }
+ ],
+ "wall_s": 996.8
+}

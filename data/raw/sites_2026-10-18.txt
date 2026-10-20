@@ -1,0 +1,22 @@
+# As-Received Index 표본 (편의 표본, 무작위 아님) — 2026-10-18
+# 형식: [분류] URL
+[commerce-sg] https://www.lovebonito.com/
+[commerce-sg] https://www.charleskeith.com/
+[commerce-sg] https://www.decathlon.sg/
+[commerce-global] https://www.allbirds.com/
+[commerce-global] https://www.gymshark.com/
+[commerce-global] https://www.warbyparker.com/
+[commerce-global] https://www.shopify.com/
+[commerce-global] https://www.amazon.com/
+[agency] https://www.ogilvy.com/
+[agency] https://www.wpp.com/
+[agency] https://www.dentsu.com/
+[agency] https://www.publicisgroupe.com/
+[docs] https://docs.stripe.com/payments
+[docs] https://vercel.com/docs
+[docs] https://developers.cloudflare.com/workers/
+[docs] https://docs.anthropic.com/en/docs/overview
+[saas] https://www.cloudflare.com/
+[saas] https://stripe.com/
+[media] https://www.nytimes.com/
+[media] https://www.donga.com/

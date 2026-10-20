@@ -1,0 +1,1023 @@
+{
+ "schema": 1,
+ "run_at": "2026-10-18T12:34:59+0800",
+ "ua": "AsReceivedAudit/1.0 (site-owner-requested verification; +https://as-received.invalid/bot)",
+ "sites": [
+  {
+   "site": "https://www.lovebonito.com/",
+   "host": "https://www.lovebonito.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 1개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 2,
+     "evidence": "과업 링크: https://apply.workable.com/lovebonito/, /sg/contact-us"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "https://apply.workable.com/lovebonito/ -> 200 html 5860B | /sg/contact-us -> 200 html 415422B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 471353B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 471353,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 2,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 2.47
+  },
+  {
+   "site": "https://www.charleskeith.com/",
+   "host": "https://www.charleskeith.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "PASS",
+     "value": 2,
+     "evidence": "서버 HTML의 <form> 2개(post 1) · input/select/textarea 9개 · hidden 6개 · csrf류 1개"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 1개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 4,
+     "evidence": "과업 링크: https://www.charleskeith.com/sg/order-status, https://www.charleskeith.com/sg/cart, #mini-cart, https://www.charleskeith.com/sg/contactus"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "https://www.charleskeith.com/sg/order-status -> 200 html 431046B | https://www.charleskeith.com/sg/cart -> 200 html 525245B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 570547B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 570547,
+    "forms": 2,
+    "inputs": 9,
+    "product_ld": 0,
+    "task_links": 4,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 7.65
+  },
+  {
+   "site": "https://www.decathlon.sg/",
+   "host": "https://www.decathlon.sg",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 1개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "과업 링크: 없음(cart·checkout·booking·apply·contact 등 미발견)"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 0,
+     "evidence": "과업 링크 없음"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 787090B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 787090,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 0,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 0.73
+  },
+  {
+   "site": "https://www.allbirds.com/",
+   "host": "https://www.allbirds.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "서버 HTML의 <form> 1개(post 1) · input/select/textarea 18개 · hidden 3개 · csrf류 0개"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 3,
+     "evidence": "과업 링크: https://www.allbirds.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css, //www.allbirds.com/cdn/shop/t/4159/assets/item-cart-properties.js, //www.allbirds.com/cdn/shop/t/4159/assets/cart-drawer-section.css"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "https://www.allbirds.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css -> 200 text/css 13728B | //www.allbirds.com/cdn/shop/t/4159/assets/item-cart-properties.js -> 404 text/javascript 0B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "발견: /.well-known/ucp (탐색: /.well-known/ucp 200, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 718290B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 718290,
+    "forms": 1,
+    "inputs": 18,
+    "product_ld": 0,
+    "task_links": 3,
+    "agent_endpoints": 1,
+    "err": null
+   },
+   "elapsed_s": 2.46
+  },
+  {
+   "site": "https://www.gymshark.com/",
+   "host": "https://www.gymshark.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 2개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "과업 링크: https://support.gymshark.com/en-US/category/orders-and-delivery"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 1,
+     "evidence": "https://support.gymshark.com/en-US/category/orders-and-delivery -> 200 html 87230B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 1828579B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 1828579,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 1,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 13.59
+  },
+  {
+   "site": "https://www.warbyparker.com/",
+   "host": "https://www.warbyparker.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "과업 링크: 없음(cart·checkout·booking·apply·contact 등 미발견)"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 0,
+     "evidence": "과업 링크 없음"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "발견: /.well-known/ucp (탐색: /.well-known/ucp 200, /.well-known/mcp 403, /.well-known/agent.json 403, /.well-known/ai-plugin.json 403, /.well-known/ap2 403)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 403 · html · 4131B"
+    }
+   ],
+   "raw": {
+    "status": 403,
+    "bytes": 4131,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 0,
+    "agent_endpoints": 1,
+    "err": null
+   },
+   "elapsed_s": 2.18
+  },
+  {
+   "site": "https://www.shopify.com/",
+   "host": "https://www.shopify.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 5개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 1개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 3,
+     "evidence": "과업 링크: /checkout, /orders, https://admin.shopify.com/signup?locale=en&amp;language=en&amp;signup_page=https%3A%2F%2Fwww.shopify.com%2F&amp;signup_types%5B%5D=paid_trial_experience"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "/checkout -> 200 html 469081B | /orders -> 200 html 586116B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 668879B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 668879,
+    "forms": 0,
+    "inputs": 5,
+    "product_ld": 0,
+    "task_links": 3,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 1.03
+  },
+  {
+   "site": "https://www.amazon.com/",
+   "host": "https://www.amazon.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "서버 HTML의 <form> 1개(post 0) · input/select/textarea 7개 · hidden 4개 · csrf류 1개"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 6,
+     "evidence": "과업 링크: /gp/css/order-history?ref_=nav_orders_first, /gp/cart/view.html?ref_=nav_cart, /gp/css/order-history?ref_=nav_AccountFlyout_orders, https://www.amazon.com/hz/contact-us?ref_=nav_AccountFlyout_CS, https://www.aboutamazon.com/subscribe?utm_source=amazon_com&utm_medium=amazonfooter&utm_campaign=newslettersubscribers&utm_term=amazonnewssignup, https://www.amazon.com/gp/css/order-history?ref_=footer_yo"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "/gp/css/order-history?ref_=nav_orders_first -> 200 html 96537B | /gp/cart/view.html?ref_=nav_cart -> robots 제외"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 652512B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 652512,
+    "forms": 1,
+    "inputs": 7,
+    "product_ld": 0,
+    "task_links": 6,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 3.0
+  },
+  {
+   "site": "https://www.ogilvy.com/",
+   "host": "https://www.ogilvy.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "PASS",
+     "value": 3,
+     "evidence": "서버 HTML의 <form> 3개(post 2) · input/select/textarea 51개 · hidden 20개 · csrf류 0개"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 3,
+     "evidence": "과업 링크: /contact, /work/reserve-resort, /contact/subscribe"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "/contact -> 200 html 226812B | /work/reserve-resort -> 200 html 84720B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 396462B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 396462,
+    "forms": 3,
+    "inputs": 51,
+    "product_ld": 0,
+    "task_links": 3,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 1.13
+  },
+  {
+   "site": "https://www.wpp.com/",
+   "host": "https://www.wpp.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 2,
+     "evidence": "과업 링크: /en/careers/search-and-apply, /en/contacts"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "/en/careers/search-and-apply -> 200 html 266955B | /en/contacts -> 200 html 383998B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 283851B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 283851,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 2,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 2.11
+  },
+  {
+   "site": "https://www.dentsu.com/",
+   "host": "https://www.dentsu.com",
+   "excluded": "robots",
+   "checks": [],
+   "raw": {},
+   "elapsed_s": 0.0
+  },
+  {
+   "site": "https://www.publicisgroupe.com/",
+   "host": "https://www.publicisgroupe.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "PASS",
+     "value": 2,
+     "evidence": "서버 HTML의 <form> 2개(post 1) · input/select/textarea 8개 · hidden 0개 · csrf류 0개"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "과업 링크: 없음(cart·checkout·booking·apply·contact 등 미발견)"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 0,
+     "evidence": "과업 링크 없음"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 20807B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 20807,
+    "forms": 2,
+    "inputs": 8,
+    "product_ld": 0,
+    "task_links": 0,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 6.68
+  },
+  {
+   "site": "https://docs.stripe.com/payments",
+   "host": "https://docs.stripe.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 3,
+     "evidence": "과업 링크: /payments/checkout, /checkout/quickstart, https://stripe.com/contact/sales"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "/payments/checkout -> 200 html 478828B | /checkout/quickstart -> 200 html 623625B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 450869B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 450869,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 3,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 2.18
+  },
+  {
+   "site": "https://vercel.com/docs",
+   "host": "https://vercel.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "서버 HTML의 <form> 1개(post 0) · input/select/textarea 1개 · hidden 0개 · csrf류 0개"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 2개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "과업 링크: /signup"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 1,
+     "evidence": "/signup -> 200 html 334774B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 888533B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 888533,
+    "forms": 1,
+    "inputs": 1,
+    "product_ld": 0,
+    "task_links": 1,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 3.48
+  },
+  {
+   "site": "https://developers.cloudflare.com/workers/",
+   "host": "https://developers.cloudflare.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 2개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 1개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 2,
+     "evidence": "과업 링크: /workers/runtime-apis/rpc/reserved-methods/, https://www.cloudflare.com/resource/contact-enterprise-sales/"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "/workers/runtime-apis/rpc/reserved-methods/ -> 200 html 181880B | https://www.cloudflare.com/resource/contact-enterprise-sales/ -> 200 html 419216B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 211241B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 211241,
+    "forms": 0,
+    "inputs": 2,
+    "product_ld": 0,
+    "task_links": 2,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 1.32
+  },
+  {
+   "site": "https://docs.anthropic.com/en/docs/overview",
+   "host": "https://docs.anthropic.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "과업 링크: 없음(cart·checkout·booking·apply·contact 등 미발견)"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 0,
+     "evidence": "과업 링크 없음"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "PASS",
+     "value": 5,
+     "evidence": "발견: /.well-known/ucp, /.well-known/mcp, /.well-known/agent.json, /.well-known/ai-plugin.json, /.well-known/ap2 (탐색: /.well-known/ucp 200, /.well-known/mcp 200, /.well-known/agent.json 200, /.well-known/ai-plugin.json 200, /.well-known/ap2 200)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 378559B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 378559,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 0,
+    "agent_endpoints": 5,
+    "err": null
+   },
+   "elapsed_s": 7.08
+  },
+  {
+   "site": "https://www.cloudflare.com/",
+   "host": "https://www.cloudflare.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "서버 HTML의 <form> 1개(post 0) · input/select/textarea 1개 · hidden 0개 · csrf류 0개"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 3개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "과업 링크: /resource/contact-enterprise-sales/"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 1,
+     "evidence": "/resource/contact-enterprise-sales/ -> 200 html 419216B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "발견: /.well-known/agent.json (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 200, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 1334684B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 1334684,
+    "forms": 1,
+    "inputs": 1,
+    "product_ld": 0,
+    "task_links": 1,
+    "agent_endpoints": 1,
+    "err": null
+   },
+   "elapsed_s": 2.71
+  },
+  {
+   "site": "https://stripe.com/",
+   "host": "https://stripe.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 1개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 4,
+     "evidence": "과업 링크: /en-sg/contact/sales, /en-sg/newsroom/news/stripe-openai-instant-checkout, /en-sg/customers/instacart, /en-sg/payments/checkout"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 2,
+     "evidence": "/en-sg/contact/sales -> 200 html 145862B | /en-sg/newsroom/news/stripe-openai-instant-checkout -> 200 html 356292B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 754908B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 754908,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 4,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 2.28
+  },
+  {
+   "site": "https://www.nytimes.com/",
+   "host": "https://www.nytimes.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "서버 HTML의 <form> 0개(post 0) · input/select/textarea 0개 · hidden 0개 · csrf류 0개 → JS 없이 HTTP만 하는 에이전트는 이 페이지에서 제출할 수단이 없다"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "과업 링크: 없음(cart·checkout·booking·apply·contact 등 미발견)"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 0,
+     "evidence": "과업 링크 없음"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 403 · html · 771B"
+    }
+   ],
+   "raw": {
+    "status": 403,
+    "bytes": 771,
+    "forms": 0,
+    "inputs": 0,
+    "product_ld": 0,
+    "task_links": 0,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 5.26
+  },
+  {
+   "site": "https://www.donga.com/",
+   "host": "https://www.donga.com",
+   "checks": [
+    {
+     "id": "server_form",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "서버 HTML의 <form> 1개(post 0) · input/select/textarea 1개 · hidden 0개 · csrf류 0개"
+    },
+    {
+     "id": "product_jsonld",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "ld+json 블록 0개 중 상품·가격·재고 신호 0개"
+    },
+    {
+     "id": "task_links",
+     "class": "PASS",
+     "value": 1,
+     "evidence": "과업 링크: https://www.donga.com/news/Sports/Basket"
+    },
+    {
+     "id": "checkout_reachable",
+     "class": "INFO",
+     "value": 1,
+     "evidence": "https://www.donga.com/news/Sports/Basket -> 200 html 136296B"
+    },
+    {
+     "id": "agent_endpoints",
+     "class": "GAP",
+     "value": 0,
+     "evidence": "없음 (탐색: /.well-known/ucp 404, /.well-known/mcp 404, /.well-known/agent.json 404, /.well-known/ai-plugin.json 404, /.well-known/ap2 404)"
+    },
+    {
+     "id": "task_page_indexable",
+     "class": "INFO",
+     "value": "-",
+     "evidence": "X-Robots-Tag: 없음 · status 200 · html · 248206B"
+    }
+   ],
+   "raw": {
+    "status": 200,
+    "bytes": 248206,
+    "forms": 1,
+    "inputs": 1,
+    "product_ld": 0,
+    "task_links": 1,
+    "agent_endpoints": 0,
+    "err": null
+   },
+   "elapsed_s": 2.26
+  }
+ ],
+ "wall_s": 17.5
+}
